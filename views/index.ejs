@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Message Board</title>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <div class="messages">
+      <% messages.forEach((message) => { %>
+      <div class="message">
+        <p class="messageUser">From: <%= message.user %></p>
+        <p class="messageText">Message: <%= message.text %></p>
+        <p class="messageDate">
+          Added: <%= message.added.toLocaleDateString("en-US") %>, <%=
+          message.added.toLocaleTimeString("en-GB", { hour: "2-digit", minute:
+          "2-digit" }) %>
+        </p>
+      </div>
+      <% }); %>
+    </div>
+  </body>
+</html>
