@@ -33,6 +33,7 @@ h1 {
   background-color: #d3d4d8;
   border-radius: 12px;
   padding: 16px;
+  word-wrap: break-word;
 }
 
 .messages {
