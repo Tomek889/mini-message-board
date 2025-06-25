@@ -44,6 +44,17 @@ indexRouter.get("/", (req, res) => {
   res.render("index", { title: "Mini Message Board", messages: messages });
 });
 
+indexRouter.get("/new", (req, res) => {
+  res.render("form");
+});
+
+indexRouter.post("/new", (req, res) => {
+  const messageName = req.body.messageName;
+  const messageText = req.body.messageText;
+  messages.push({ text: messageText, user: messageName, added: new Date() });
+  res.redirect("/");
+});
+
 indexRouter.get("/{*splat}", (req, res) => {
   res.send("Not found (404 error).");
 });
