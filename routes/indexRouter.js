@@ -55,6 +55,10 @@ indexRouter.post("/new", (req, res) => {
   res.redirect("/");
 });
 
+indexRouter.get("/message/:id", (req, res) => {
+    res.send('')
+});
+
 indexRouter.get("/{*splat}", (req, res) => {
   res.send("Not found (404 error).");
 });

@@ -8,7 +8,7 @@
   <body>
     <h1><%= title %></h1>
     <div class="messages">
-      <% messages.forEach((message) => { %>
+      <% messages.forEach((message, index) => { %>
       <div class="message">
         <p class="messageUser">From: <%= message.user %></p>
         <p class="messageText">Message: <%= message.text %></p>
@@ -17,8 +17,10 @@
           message.added.toLocaleTimeString("en-GB", { hour: "2-digit", minute:
           "2-digit" }) %>
         </p>
+        <a href="/message/<%= index %>"><button>Open</button></a>
       </div>
       <% }); %>
     </div>
+    <a href="/new" class="addButton"><button>Add a new message</button></a>
   </body>
 </html>
