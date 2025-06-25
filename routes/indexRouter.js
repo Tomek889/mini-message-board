@@ -56,7 +56,9 @@ indexRouter.post("/new", (req, res) => {
 });
 
 indexRouter.get("/message/:id", (req, res) => {
-    res.send('')
+  const message = messages[parseInt(req.params.id)];
+  if (!message) return res.status(404).send("Message not found");
+  res.render("message", { title: "Message Details", message });
 });
 
 indexRouter.get("/{*splat}", (req, res) => {
